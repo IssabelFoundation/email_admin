@@ -153,7 +153,7 @@ class paloSantoEmailRelay {
             return array("ERROR" => "Failed to connect to server", "SMTP_ERROR" => $smtp->getError());
         }
 
-        if(!$smtp->Hello()){
+        if(!$smtp->Hello(getHostname())){
             return array("ERROR" => "Failed to send hello command", "SMTP_ERROR" => $smtp->getError());
         }
 
