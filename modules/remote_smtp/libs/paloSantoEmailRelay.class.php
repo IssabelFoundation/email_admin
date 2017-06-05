@@ -158,8 +158,13 @@ class paloSantoEmailRelay {
         }
 
         if($tls_enabled){
-            if(!$smtp->StartTLS())
+            if(!$smtp->StartTLS()) {
                 return array("ERROR" => "Failed to start TLS", "SMTP_ERROR" => $smtp->getError());
+            }
+
+            if(!$smtp->Hello(getHostname())){
+                return array("ERROR" => "Failed to send hello command", "SMTP_ERROR" => $smtp->getError());
+            }
         }
 
         if($auth_enabled){
