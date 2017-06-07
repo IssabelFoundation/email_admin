@@ -13,7 +13,7 @@
     <div id="mailman_detail">	
 	<table border="0" width="100%" cellspacing="0" cellpadding="8" >
 	    <tr class="letra12">
-		<td align="left" width="23%"><b style="color: rgb(227, 83, 50); font-size: 12px; font-family: 'Lucida Console';">{$Mailman_Setting}</b></td>
+		<td align="left" width="23%"><b class='form-label-style'>{$Mailman_Setting}</b></td>
 	    </tr>
 	    <tr class="letra12">
 		<td align="left"><b>{$emailmailman.LABEL}: <span  class="required">*</span></b></td>
@@ -31,7 +31,7 @@
     <div id="list_detail">
 	<table border="0" width="100%" cellspacing="0" cellpadding="8" >
 	    <tr class="letra12">
-		<td align="left"><b style="color: rgb(227, 83, 50); font-size: 12px; font-family: 'Lucida Console';">{$List_Setting}</b></td>
+		<td align="left"><b class='form-label-style'>{$List_Setting}</b></td>
 	    </tr>
 	    <tr class="letra12">
 		<td align="left" width="23%"><b>{$domain.LABEL}: <span  class="required">*</span></b></td>
