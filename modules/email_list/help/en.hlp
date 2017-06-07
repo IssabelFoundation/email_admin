@@ -11,7 +11,7 @@
         <p>Figure 1</p></div>
         <br />
 	<h2>Creating a New Email List</h2>
-	<p>To create a new list, click on "New Email List" button. If there isn't an existing Mailman Admin User, you'll have to configure it (you must have a Mailman admin created in order to run the mailman service). Enter an email and password for the administration of the Mailman. Then enter the New List Settings such as the domain (you should have at least one domain created in Elastix), the name of the list, the administrator and password. When finish click on "Save" button (The administrator will receive an email with the password of the list)</p>
+	<p>To create a new list, click on "New Email List" button. If there isn't an existing Mailman Admin User, you'll have to configure it (you must have a Mailman admin created in order to run the mailman service). Enter an email and password for the administration of the Mailman. Then enter the New List Settings such as the domain (you should have at least one domain created in Issabel), the name of the list, the administrator and password. When finish click on "Save" button (The administrator will receive an email with the password of the list)</p>
         <div class="hlp_figures"><img src="../modules/{$node_id}/images/hlp_new_email_list1.png" border="0" />
         <p>Figure 2</p></div>
 	<br />
