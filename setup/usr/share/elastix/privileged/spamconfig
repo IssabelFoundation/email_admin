@@ -80,7 +80,7 @@ function loadCyrusPassword()
             'ADMIN' =>  'cyrus',
             'PASS'  =>  'palosanto',
         );
-        foreach (file('/etc/elastix.conf') as $s) {
+        foreach (file('/etc/issabel.conf') as $s) {
             $regs = NULL;
             if (preg_match('/^cyrususerpwd\s*=\s*(.+)/', trim($s), $regs)) {
                 $CYRUS['PASS'] = $regs[1];
