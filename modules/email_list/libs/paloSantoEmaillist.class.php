@@ -110,7 +110,7 @@ class paloSantoEmailList {
 
     function isMailmanListCreated()
     {
-	$sComando = '/usr/bin/elastix-helper mailman_config list_lists';
+	$sComando = '/usr/bin/issabel-helper mailman_config list_lists';
 	$output = $ret = NULL;
         exec($sComando, $output, $ret);
 	if($ret != 0){
@@ -129,7 +129,7 @@ class paloSantoEmailList {
     function checkPostfixFile()
     {
         $output = $ret = NULL;
-        exec('/usr/bin/elastix-helper mailman_config check_postfix_file', $output, $ret);
+        exec('/usr/bin/issabel-helper mailman_config check_postfix_file', $output, $ret);
     }
 
     function domainExists($id_domain)
@@ -161,7 +161,7 @@ class paloSantoEmailList {
 
     function mailmanCreateList($listName,$emailAdmin,$password,$domain="")
     {
-	$sComando = "/usr/bin/elastix-helper mailman_config newlist ".escapeshellarg($listName)." ".escapeshellarg($emailAdmin)." ".escapeshellarg($password)." ".escapeshellarg($domain);
+	$sComando = "/usr/bin/issabel-helper mailman_config newlist ".escapeshellarg($listName)." ".escapeshellarg($emailAdmin)." ".escapeshellarg($password)." ".escapeshellarg($domain);
 	$output = $ret = NULL;
         exec($sComando, $output, $ret);
 	if($ret == 0)
@@ -183,7 +183,7 @@ class paloSantoEmailList {
 
     function mailmanCreateVirtualAliases($listName,$domainName)
     {
-	$sComando = "/usr/bin/elastix-helper mailman_config virtual_aliases ".escapeshellarg($listName)." ".escapeshellarg($domainName);
+	$sComando = "/usr/bin/issabel-helper mailman_config virtual_aliases ".escapeshellarg($listName)." ".escapeshellarg($domainName);
 	$output = $ret = NULL;
         exec($sComando, $output, $ret);
 	if($ret == 0)
@@ -258,7 +258,7 @@ class paloSantoEmailList {
 	foreach($arrMembers as $member)
 	    $listOfMembers .= $member["member"]."\n";
 
-	$sComando = "/usr/bin/elastix-helper mailman_config add_members ".escapeshellarg($listOfMembers)." ".escapeshellarg($listName);
+	$sComando = "/usr/bin/issabel-helper mailman_config add_members ".escapeshellarg($listOfMembers)." ".escapeshellarg($listName);
 	$output = $ret = NULL;
         exec($sComando, $output, $ret);
 	if($ret == 0)
@@ -318,7 +318,7 @@ class paloSantoEmailList {
 
     function mailmanRemoveList($listName,$domainName)
     {
-	$sComando = "/usr/bin/elastix-helper mailman_config remove_list ".escapeshellarg($listName)." ".escapeshellarg($domainName);
+	$sComando = "/usr/bin/issabel-helper mailman_config remove_list ".escapeshellarg($listName)." ".escapeshellarg($domainName);
 	$output = $ret = NULL;
         exec($sComando, $output, $ret);
 	if($ret == 0)
@@ -347,7 +347,7 @@ class paloSantoEmailList {
 	foreach($arrMembers as $member)
 	    $listOfMembers .= $member["member"]."\n";
 
-	$sComando = "/usr/bin/elastix-helper mailman_config remove_members ".escapeshellarg($listOfMembers)." ".escapeshellarg($listName);
+	$sComando = "/usr/bin/issabel-helper mailman_config remove_members ".escapeshellarg($listOfMembers)." ".escapeshellarg($listName);
 	$output = $ret = NULL;
         exec($sComando, $output, $ret);
 	if($ret == 0)

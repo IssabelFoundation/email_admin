@@ -83,7 +83,7 @@ class paloSantoAntispam {
         case 'one_month':
         default:         $time_spam = 30; break;
         }
-        exec('/usr/bin/elastix-helper spamconfig --enablespamfilter'.
+        exec('/usr/bin/issabel-helper spamconfig --enablespamfilter'.
             (is_null($time_spam) ? '' : ' --deleteperiod '.escapeshellarg($time_spam)),
             $output, $retval);
         if ($retval != 0) {
@@ -102,7 +102,7 @@ class paloSantoAntispam {
     {
         $this->errMsg = '';
         $output = $retval = NULL;
-        exec('/usr/bin/elastix-helper spamconfig --disablespamfilter',
+        exec('/usr/bin/issabel-helper spamconfig --disablespamfilter',
             $output, $retval);
         if ($retval != 0) {
             foreach ($output as $s) {
@@ -120,7 +120,7 @@ class paloSantoAntispam {
     {
     	$this->errMsg = '';
         $output = $retval = NULL;
-        exec('/usr/bin/elastix-helper spamconfig --setlevelheader'.
+        exec('/usr/bin/issabel-helper spamconfig --setlevelheader'.
             ' --requiredhits '.escapeshellarg($level).
             ' --headersubject '.escapeshellarg($header),
             $output, $retval);
@@ -207,7 +207,7 @@ class paloSantoAntispam {
     function getTimeDeleteSpam()
     {
         $output = $retval = NULL;
-        exec('/usr/bin/elastix-helper spamconfig --getdeleteperiod 2>&1', $output, $retval);
+        exec('/usr/bin/issabel-helper spamconfig --getdeleteperiod 2>&1', $output, $retval);
         if ($retval != 0 || count($output) < 1) return '';
         switch (trim($output[0])) {
         case '7':   return 'one_week';

@@ -29,6 +29,6 @@
 	global $arrConfModule;
 $arrConfModule['module_name'] = 'email_accounts';
 $arrConfModule['templates_dir'] = 'themes';
-$arrConfModule['dsn_conn_database'] = "sqlite3:///$arrConf[elastix_dbdir]/email.db";
+$arrConfModule['dsn_conn_database'] = "sqlite3:///$arrConf[issabel_dbdir]/email.db";
 
 ?>

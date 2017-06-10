@@ -108,7 +108,7 @@ class paloEmail {
     {
         $this->errMsg = '';
         $output = $retval = NULL;
-        $sComando = '/usr/bin/elastix-helper email_account --createdomain '.
+        $sComando = '/usr/bin/issabel-helper email_account --createdomain '.
             escapeshellarg($domain_name).' 2>&1';
         exec($sComando, $output, $retval);
         if ($retval != 0) {
@@ -136,7 +136,7 @@ class paloEmail {
     {
         $this->errMsg = '';
         $output = $retval = NULL;
-        $sComando = '/usr/bin/elastix-helper email_account --deletedomain '.
+        $sComando = '/usr/bin/issabel-helper email_account --deletedomain '.
             escapeshellarg($domain_name).' 2>&1';
         exec($sComando, $output, $retval);
         if ($retval != 0) {
@@ -236,7 +236,7 @@ class paloEmail {
     {
         $this->errMsg = '';
         $output = $retval = NULL;
-        $sComando = '/usr/bin/elastix-helper email_account --createaccount'.
+        $sComando = '/usr/bin/issabel-helper email_account --createaccount'.
             ' --domain '.escapeshellarg($domain).
             ' --username '.escapeshellarg($username).
             ' --password '.escapeshellarg($password).
@@ -270,7 +270,7 @@ class paloEmail {
     {
         $this->errMsg = '';
         $output = $retval = NULL;
-        $sComando = '/usr/bin/elastix-helper email_account --setaccountpassword'.
+        $sComando = '/usr/bin/issabel-helper email_account --setaccountpassword'.
             ' --username '.escapeshellarg($username).
             ' --password '.escapeshellarg($password).
             ' 2>&1';
@@ -301,7 +301,7 @@ class paloEmail {
     {
         $this->errMsg = '';
         $output = $retval = NULL;
-        $sComando = '/usr/bin/elastix-helper email_account --deleteaccount --username '.
+        $sComando = '/usr/bin/issabel-helper email_account --deleteaccount --username '.
             escapeshellarg($username).' 2>&1';
         exec($sComando, $output, $retval);
         if ($retval != 0) {
@@ -361,7 +361,7 @@ class paloEmail {
             if(!preg_match($regularExpresion,$username)){
                 $this->errMsg = "Username format is not valid";
             } else {
-                exec('/usr/bin/elastix-helper email_account --reconstruct_mailbox  --mailbox '.escapeshellarg($username).' 2>&1', $output, $retval);
+                exec('/usr/bin/issabel-helper email_account --reconstruct_mailbox  --mailbox '.escapeshellarg($username).' 2>&1', $output, $retval);
             }
         } else {
             $this->errMsg = "Username must not be null";

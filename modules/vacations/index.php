@@ -26,7 +26,7 @@
   | The Initial Developer of the Original Code is PaloSanto Solutions    |
   +----------------------------------------------------------------------+
   $Id: index.php,v 1.1 2011-06-07 12:06:28 Eduardo Cueva ecueva@palosanto.com Exp $ */
-//include elastix framework
+//include issabel framework
 require_once "libs/paloSantoForm.class.php";
 require_once "libs/paloSantoACL.class.php";
 
@@ -51,7 +51,7 @@ function _moduleContent(&$smarty, $module_name)
 
     //conexion resource
     $pDB    = new paloDB($arrConf['dsn_conn_database']);
-    $pDBACL = new paloDB($arrConf['elastix_dsn']['acl']);
+    $pDBACL = new paloDB($arrConf['issabel_dsn']['acl']);
 
     //actions
     $action = getAction();
@@ -59,7 +59,7 @@ function _moduleContent(&$smarty, $module_name)
 
     $pACL = new paloACL($pDBACL);
     $email_curr = getEmailCurrentUser($pACL);
-    $setany = $pACL->hasModulePrivilege($_SESSION['elastix_user'], $module_name, 'setanyemail');
+    $setany = $pACL->hasModulePrivilege($_SESSION['issabel_user'], $module_name, 'setanyemail');
 
     switch($action){
     case "showAllEmails":
@@ -84,7 +84,7 @@ function _moduleContent(&$smarty, $module_name)
 // Cargar correo del usuario actual logoneado
 function getEmailCurrentUser($pACL)
 {
-    $id_user = $pACL->getIdUser($_SESSION['elastix_user']);
+    $id_user = $pACL->getIdUser($_SESSION['issabel_user']);
     $listaPropiedades = $pACL->getUserProfile($id_user, 'webmail');
     $email = '';
     if (is_array($listaPropiedades)) {
@@ -113,7 +113,7 @@ function viewFormVacations($smarty, $module_name, $local_templates_dir, &$pDB,
     //$_DATA['ini_date'] = isset($_POST['ini_date'])?$_POST['ini_date']:date("d M Y");
     //$_DATA['end_date'] = isset($_POST['end_date'])?$_POST['end_date']:date("d M Y");
 
-    $userAccount = isset($_SESSION['elastix_user'])?$_SESSION['elastix_user']:"";
+    $userAccount = isset($_SESSION['issabel_user'])?$_SESSION['issabel_user']:"";
 
     if($setany){
         $link_emails = "<a href='javascript: popup_get_emails(\"?menu=$module_name&action=showAllEmails&rawmode=yes\");' name='getEmails' id='getEmails' style='cursor: pointer;'>"._tr("Choose other email account")."</a>";
@@ -209,7 +209,7 @@ function updateEmailVacations($smarty, $module_name, $local_templates_dir,
     $end_date   = getParameter("end_date");
     $result     = "";
 
-    $userAccount = isset($_SESSION['elastix_user'])?$_SESSION['elastix_user']:"";
+    $userAccount = isset($_SESSION['issabel_user'])?$_SESSION['issabel_user']:"";
 
     if(!$oForm->validateForm($_POST)) {
         // Falla la validación básica del formulario
@@ -234,7 +234,7 @@ function updateEmailVacations($smarty, $module_name, $local_templates_dir,
     if($email != $emails){
         if(!$setany){
             $smarty->assign("mb_title", _tr("Error"));
-            $smarty->assign("mb_message",_tr('Email is not correct. Please write the email assigned to your elastix account.'));
+            $smarty->assign("mb_message",_tr('Email is not correct. Please write the email assigned to your issabel account.'));
             return;
         }
     }
@@ -292,7 +292,7 @@ function showAllEmails($smarty, $module_name, $local_templates_dir, &$pDB,
     $filter_field  = getParameter("filter_field");
     $filter_value  = getParameter("filter_value");
 
-    $userAccount = isset($_SESSION['elastix_user'])?$_SESSION['elastix_user']:"";
+    $userAccount = isset($_SESSION['issabel_user'])?$_SESSION['issabel_user']:"";
 
     $url = array(
         "menu"         =>  $module_name,

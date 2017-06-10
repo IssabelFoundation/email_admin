@@ -34,7 +34,7 @@ global $arrLangModule;
 $arrLangModule=array(
 "main.cf file was updated successfully but when restarting the mail service failed" => "fisierul main.cf a fost actualizat dar la restartare serviciului de mail nu a pornit",
 "Relay" => "Relay",
-"message about email relay" => "Aceste retele permit trecerea emailurilor la domenii externe prin elastix <br> folosind protocolul SMTP.
+"message about email relay" => "Aceste retele permit trecerea emailurilor la domenii externe prin Issabel <br> folosind protocolul SMTP.
 Trebuie sa introduceti o retea pe rand si fiecare retea trebuie sa aiba urmatorul format
 <b>IP/MASK</b>.<br>Spre exemplu pentru a permite Relay de la Issabel trebuie sa introduceti
 127.0.0.1/32. <br> Recomandam tinerea retelei 127.0.0.1/32 in configuratie <br>deoarece unele procese o folosesc.",

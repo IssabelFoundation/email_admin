@@ -151,8 +151,8 @@ function viewFormAccount($smarty, $module_name, $local_templates_dir, &$pDB, $ar
 
     $arrData = array();
 
-    $pACL = new paloACL(new paloDB($arrConf['elastix_dsn']['acl']));
-    $userAccount = isset($_SESSION['elastix_user'])?$_SESSION['elastix_user']:"";
+    $pACL = new paloACL(new paloDB($arrConf['issabel_dsn']['acl']));
+    $userAccount = isset($_SESSION['issabel_user'])?$_SESSION['issabel_user']:"";
 
     $reconstruir = _tr("Reconstruct");
 
@@ -216,10 +216,10 @@ function viewFormAccount($smarty, $module_name, $local_templates_dir, &$pDB, $ar
 
 function reconstruir_mailBox($smarty, $module_name, $local_templates_dir, &$pDB, $arrConf)
 {
-    $pACL = new paloACL(new paloDB($arrConf['elastix_dsn']['acl']));
+    $pACL = new paloACL(new paloDB($arrConf['issabel_dsn']['acl']));
     $pEmail = new paloEmail($pDB);
 
-    $userAccount = isset($_SESSION['elastix_user'])?$_SESSION['elastix_user']:"";
+    $userAccount = isset($_SESSION['issabel_user'])?$_SESSION['issabel_user']:"";
 
     if($pEmail->resconstruirMailBox(getParameter("username"))){
         $smarty->assign("mb_title", _tr('MESSAGE').":");

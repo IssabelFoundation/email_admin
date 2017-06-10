@@ -31,7 +31,7 @@
 
     $arrConfModule['module_name']       = 'vacations';
     $arrConfModule['templates_dir']     = 'themes';
-    $arrConfModule['dsn_conn_database'] = "sqlite3:///$arrConf[elastix_dbdir]/email.db";
+    $arrConfModule['dsn_conn_database'] = "sqlite3:///$arrConf[issabel_dbdir]/email.db";
     $arrConfModule['path_postfix'] = '/etc/postfix';
     $arrConfModule['path_spamassassin']  = '/etc/mail/spamassassin';
     $arrConfModule['file_master_cf'] = '/etc/postfix/master.cf';

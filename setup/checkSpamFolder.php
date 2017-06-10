@@ -34,7 +34,7 @@ exec('/sbin/service spamassassin status', $output, $retval);
 if ($retval != 0) {
 	print "ERROR: {$output[0]}\n";
 } else {
-	system('/usr/share/elastix/privileged/spamconfig --refreshspamfilter', $retval);
+	system('/usr/share/issabel/privileged/spamconfig --refreshspamfilter', $retval);
 }
 exit($retval);
 ?>

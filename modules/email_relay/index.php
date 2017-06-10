@@ -87,7 +87,7 @@ function _moduleContent(&$smarty, $module_name)
         if($bGuardar) {
             // Si no hay errores de validacion entonces ingreso las redes al archivo de relay /etc/postfix/network_table
             $output = $retval = NULL;
-            exec('/usr/bin/elastix-helper relayconfig '.
+            exec('/usr/bin/issabel-helper relayconfig '.
                 implode(' ', array_map('escapeshellarg', $arrRedesRelay)).' 2>&1',
                 $output, $retval);
             if ($retval != 0) {

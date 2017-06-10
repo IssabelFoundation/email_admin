@@ -453,7 +453,7 @@ class searchLog {
 }
 
 function wlog($message){
-    $file = fopen("/var/log/elastix/postfix_stats.log","a");
+    $file = fopen("/var/log/issabel/postfix_stats.log","a");
     if($file){
         fwrite($file,$message);
         fclose($file);

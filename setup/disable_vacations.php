@@ -30,7 +30,7 @@ $Id: disable_vacations.php,v 1.1 2011-05-01 05:09:57 Eduardo Cueva <ecueva@palos
 
 // script para eliminar el script de vacaciones si ya se ha pasado el periodo de vacaciones
 
-if (!($documentRoot = getenv('ELASTIX_ROOT'))) $documentRoot="/var/www/html";
+if (!($documentRoot = getenv('ISSABEL_ROOT'))) $documentRoot="/var/www/html";
 require_once("$documentRoot/libs/misc.lib.php");
 require_once("$documentRoot/configs/default.conf.php");
 

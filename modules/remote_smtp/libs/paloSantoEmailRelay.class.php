@@ -86,7 +86,7 @@ class paloSantoEmailRelay {
     {
     	$this->errMsg = '';
         $output = $retval = NULL;
-        $sComando = '/usr/bin/elastix-helper remotesmtp'.
+        $sComando = '/usr/bin/issabel-helper remotesmtp'.
             ' --relay '.escapeshellarg($arrData['relayhost']).
             ' --port '.escapeshellarg($arrData['port']).
             ' --user '.(empty($arrData['user']) ? "''" : escapeshellarg($arrData['user'])).

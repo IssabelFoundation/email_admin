@@ -355,7 +355,7 @@ SCRIPT;
     private function existCronFile()
     {
         $this->errMsg = '';
-        $sComando = '/usr/bin/elastix-helper vacationconfig exist_cron';
+        $sComando = '/usr/bin/issabel-helper vacationconfig exist_cron';
         $output = $ret = NULL;
         exec($sComando, $output, $ret);
         if ($ret != 0) {
@@ -374,7 +374,7 @@ SCRIPT;
     private function createCronFile()
     {
         $this->errMsg = '';
-        $sComando = '/usr/bin/elastix-helper vacationconfig create_cron';
+        $sComando = '/usr/bin/issabel-helper vacationconfig create_cron';
         $output = $ret = NULL;
         exec($sComando, $output, $ret);
         if ($ret != 0) {
