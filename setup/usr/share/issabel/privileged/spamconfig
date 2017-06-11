@@ -193,7 +193,7 @@ function action_enablespamfilter($opt)
     if (!$bValidSpam) {
     	$lines[] = 
             "#\n".
-            "#Add by Elastix\n".
+            "#Added by Issabel\n".
             "#\n".
              "spamfilter unix -       n       n       -       -       pipe\n".
              "  flags=Rq user=spamfilter argv=/usr/local/bin/spamfilter.sh -f \${sender} -- \${recipient}\n";

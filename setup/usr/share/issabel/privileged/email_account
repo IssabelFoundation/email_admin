@@ -127,8 +127,8 @@ function create_domain($opt)
     }
 
     // Add the new domain to the required key in main.cf
-    $bPostfixElastix2 = isPostfixToIssabel2();
-    add_remove_domain_postfix($sNewDomain, TRUE, $bPostfixElastix2);
+    $bPostfixIssabel2 = isPostfixToIssabel2();
+    add_remove_domain_postfix($sNewDomain, TRUE, $bPostfixIssabel2);
     
     return TRUE;
 }
@@ -156,7 +156,7 @@ function delete_domain($opt)
         error_exit("ERR: failed to login to IMAP\n");
     }
     
-    $bPostfixElastix2 = isPostfixToIssabel2();
+    $bPostfixIssabel2 = isPostfixToIssabel2();
     try {
         $conn = new PDO('sqlite:/var/www/db/email.db');
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -182,7 +182,7 @@ function delete_domain($opt)
         $accountList = $sthListAccounts->fetchAll(PDO::FETCH_ASSOC);
         $preparedSth = array();
         foreach ($accountList as $account) {
-            _internal_delete_account($conn, $preparedSth, $cyr_conn, $account, $bPostfixElastix2);
+            _internal_delete_account($conn, $preparedSth, $cyr_conn, $account, $bPostfixIssabel2);
         }
 
         // Remove remaining references to domain in database
@@ -194,12 +194,12 @@ function delete_domain($opt)
     $cyr_conn->imap_logout();
 
     // Remove the old domain from the required key in main.cf
-    add_remove_domain_postfix($sOldDomain, FALSE, $bPostfixElastix2);
+    add_remove_domain_postfix($sOldDomain, FALSE, $bPostfixIssabel2);
     
     return TRUE;
 }
 
-function _internal_delete_account($conn, &$preparedSth, $cyr_conn, $account, $bPostfixElastix2)
+function _internal_delete_account($conn, &$preparedSth, $cyr_conn, $account, $bPostfixIssabel2)
 {
     if (!isset($preparedSth['listAliases'])) {
         $preparedSth['listAliases'] = $conn->prepare(
@@ -230,7 +230,7 @@ function _internal_delete_account($conn, &$preparedSth, $cyr_conn, $account, $bP
     }
     
     // Remove sasl passwords linked to aliases
-    if (!$bPostfixElastix2 && count($aliasList) <= 0)
+    if (!$bPostfixIssabel2 && count($aliasList) <= 0)
         $aliasList[] = $account['username'].'@'.SASL_DOMAIN;
     foreach ($aliasList as $sAlias) {
         $retval = NULL;
@@ -242,9 +242,9 @@ function _internal_delete_account($conn, &$preparedSth, $cyr_conn, $account, $bP
     }
 }
 
-function add_remove_domain_postfix($sDomain, $bAddRemove, $bPostfixElastix2)
+function add_remove_domain_postfix($sDomain, $bAddRemove, $bPostfixIssabel2)
 {
-    $sDomainKey = $bPostfixElastix2 ? 'virtual_mailbox_domains' : 'mydomain2';
+    $sDomainKey = $bPostfixIssabel2 ? 'virtual_mailbox_domains' : 'mydomain2';
     $postfixConf = file('/etc/postfix/main.cf');
     if ($postfixConf === FALSE) {
         error_exit("ERR: failed to load /etc/postfix/main.cf for domain update\n");
@@ -336,7 +336,7 @@ function create_account($opt)
         error_exit("ERR: failed to login to IMAP\n");
     }
     
-    $bPostfixElastix2 = isPostfixToIssabel2();
+    $bPostfixIssabel2 = isPostfixToIssabel2();
     try {
         $conn = new PDO('sqlite:/var/www/db/email.db');
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -344,7 +344,7 @@ function create_account($opt)
 
         // Check whether username already exists
         $sth = $conn->prepare('SELECT username FROM accountuser WHERE username = ?');
-        $sFullUsername = $bPostfixElastix2
+        $sFullUsername = $bPostfixIssabel2
             ? "{$sUsername}@{$sDomain}"
             : "{$sUsername}.{$sDomain}";
         $sth->execute(array($sFullUsername));
@@ -362,7 +362,7 @@ function create_account($opt)
         );
         $preparedSth = array();        
         $bSuccess = _internal_create_account($conn, $preparedSth, $cyr_conn,
-            $account, $bPostfixElastix2);
+            $account, $bPostfixIssabel2);
         if ($bSuccess)
             $conn->commit();
         else $conn->rollBack();
@@ -378,7 +378,7 @@ function create_account($opt)
 /* This routine assumes it is running inside a transaction, and that the described
  * account has been already verified to not exist. This routine must perform all
  * of the database updates *BEFORE* performing any of the system-wide updates. */
-function _internal_create_account($conn, &$preparedSth, $cyr_conn, $account, $bPostfixElastix2)
+function _internal_create_account($conn, &$preparedSth, $cyr_conn, $account, $bPostfixIssabel2)
 {
     global $CYRUS;
 
@@ -406,14 +406,14 @@ function _internal_create_account($conn, &$preparedSth, $cyr_conn, $account, $bP
     $idDomain = $domainList[0];
 
     // Insert into database
-    $sFullUsername = $bPostfixElastix2
+    $sFullUsername = $bPostfixIssabel2
         ? "{$account['username']}@{$account['domain']}"
         : "{$account['username']}.{$account['domain']}";
     $preparedSth['createAccount']->execute(array($idDomain, $sFullUsername, $account['password'], $account['quota']));
     $preparedSth['createAlias']->execute(array($sFullUsername, "{$account['username']}@{$account['domain']}"));
 
     // No exceptions so far, create actual email account in system
-    if (!_internal_create_account_password($sFullUsername, $account['password'], $bPostfixElastix2))
+    if (!_internal_create_account_password($sFullUsername, $account['password'], $bPostfixIssabel2))
         return FALSE;
     
     // Attempt to create the mailbox for the user
@@ -435,7 +435,7 @@ function _internal_create_account($conn, &$preparedSth, $cyr_conn, $account, $bP
         if (!$cyr_conn->deletemb($userpath)) {
             fwrite(STDERR, "ERR: failed to remove user {$sFullUsername}: ".$cyr_conn->getMessage()."\n");
         }
-        $sAlias = $sFullUsername; if (!$bPostfixElastix2) $sAlias .= '@'.SASL_DOMAIN;
+        $sAlias = $sFullUsername; if (!$bPostfixIssabel2) $sAlias .= '@'.SASL_DOMAIN;
         $retval = NULL;
         system('/usr/sbin/saslpasswd2 -d '.escapeshellarg($sAlias), $retval);
         if ($retval != 0) {
@@ -446,10 +446,10 @@ function _internal_create_account($conn, &$preparedSth, $cyr_conn, $account, $bP
     return TRUE;
 }
 
-function _internal_create_account_password($sFullUsername, $sPassword, $bPostfixElastix2)
+function _internal_create_account_password($sFullUsername, $sPassword, $bPostfixIssabel2)
 {
     $sAccountCommand = '/usr/sbin/saslpasswd2 -c '.escapeshellarg($sFullUsername);
-    if (!$bPostfixElastix2) $sAccountCommand .= ' -u '.SASL_DOMAIN;
+    if (!$bPostfixIssabel2) $sAccountCommand .= ' -u '.SASL_DOMAIN;
     $procHandle = popen($sAccountCommand, 'w');
     fwrite($procHandle, $sPassword);
     $retval = pclose($procHandle);
@@ -484,7 +484,7 @@ function delete_account($opt)
         error_exit("ERR: failed to login to IMAP\n");
     }
     
-    $bPostfixElastix2 = isPostfixToIssabel2();
+    $bPostfixIssabel2 = isPostfixToIssabel2();
     try {
         $conn = new PDO('sqlite:/var/www/db/email.db');
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -501,7 +501,7 @@ function delete_account($opt)
         $account = array(
             'username'  =>  $sUsername,
         );
-        _internal_delete_account($conn, $preparedSth, $cyr_conn, $account, $bPostfixElastix2);
+        _internal_delete_account($conn, $preparedSth, $cyr_conn, $account, $bPostfixIssabel2);
     } catch (PDOException $e) {
         error_exit("ERR: failed to remove old account - ".$e->getMessage()."\n");
     }
@@ -533,7 +533,7 @@ function set_account_password($opt)
         error_exit("ERR: no password specified.\n");
     }
 
-    $bPostfixElastix2 = isPostfixToIssabel2();
+    $bPostfixIssabel2 = isPostfixToIssabel2();
     try {
         $conn = new PDO('sqlite:/var/www/db/email.db');
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -551,7 +551,7 @@ function set_account_password($opt)
         $sth = $conn->prepare('UPDATE accountuser SET password = ? WHERE username = ?');
         $sth->execute(array($sPassword, $sUsername));
 
-        $bSuccess = _internal_create_account_password($sUsername, $sPassword, $bPostfixElastix2);
+        $bSuccess = _internal_create_account_password($sUsername, $sPassword, $bPostfixIssabel2);
         if ($bSuccess)
             $conn->commit();
         else $conn->rollBack();

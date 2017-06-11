@@ -378,8 +378,8 @@ class paloEmail {
     function getAccountQuota($username)
     {
         $this->errMsg = '';
-        $bPostfixElastix2 = isPostfixToIssabel2();
-        $regexp = $bPostfixElastix2
+        $bPostfixIssabel2 = isPostfixToIssabel2();
+        $regexp = $bPostfixIssabel2
             ? '/^[a-z0-9]+([\._\-]?[a-z0-9]+[_\-]?)*@[a-z0-9]+([\._\-]?[a-z0-9]+)*(\.[a-z0-9]{2,6})+$/'
             : '/^([a-z0-9]+([\._\-]?[a-z0-9]+[_\-]?)*)$/';
         if (!preg_match($regexp, $username)) {
@@ -408,8 +408,8 @@ class paloEmail {
     function setAccountQuota($username, $newquota)
     {
         $this->errMsg = '';
-        $bPostfixElastix2 = isPostfixToIssabel2();
-        $regexp = $bPostfixElastix2
+        $bPostfixIssabel2 = isPostfixToIssabel2();
+        $regexp = $bPostfixIssabel2
             ? '/^[a-z0-9]+([\._\-]?[a-z0-9]+[_\-]?)*@[a-z0-9]+([\._\-]?[a-z0-9]+)*(\.[a-z0-9]{2,6})+$/'
             : '/^([a-z0-9]+([\._\-]?[a-z0-9]+[_\-]?)*)$/';
         if (!preg_match($regexp, $username)) {
