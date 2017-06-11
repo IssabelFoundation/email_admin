@@ -162,7 +162,7 @@ class paloEmail {
     function getAccount($username)
     {
         $arr_result = FALSE;
-        $configPostfix2 = isPostfixToElastix2();// in misc.lib.php
+        $configPostfix2 = isPostfixToIssabel2();// in misc.lib.php
         $regularExpresion = "";
         if($configPostfix2)
            $regularExpresion = '/^[a-z0-9]+([\._\-]?[a-z0-9]+[_\-]?)*@[a-z0-9]+([\._\-]?[a-z0-9]+)*(\.[a-z0-9]{2,6})+$/';
@@ -344,7 +344,7 @@ class paloEmail {
     {
         $output = $retval = NULL;
 
-        $configPostfix2 = isPostfixToElastix2();// in misc.lib.php
+        $configPostfix2 = isPostfixToIssabel2();// in misc.lib.php
         $regularExpresion = "";
         if($configPostfix2)
            $regularExpresion = '/^[a-z0-9]+([\._\-]?[a-z0-9]+[_\-]?)*@[a-z0-9]+([\._\-]?[a-z0-9]+)*(\.[a-z0-9]{2,6})+$/';
@@ -378,7 +378,7 @@ class paloEmail {
     function getAccountQuota($username)
     {
         $this->errMsg = '';
-        $bPostfixElastix2 = isPostfixToElastix2();
+        $bPostfixElastix2 = isPostfixToIssabel2();
         $regexp = $bPostfixElastix2
             ? '/^[a-z0-9]+([\._\-]?[a-z0-9]+[_\-]?)*@[a-z0-9]+([\._\-]?[a-z0-9]+)*(\.[a-z0-9]{2,6})+$/'
             : '/^([a-z0-9]+([\._\-]?[a-z0-9]+[_\-]?)*)$/';
@@ -408,7 +408,7 @@ class paloEmail {
     function setAccountQuota($username, $newquota)
     {
         $this->errMsg = '';
-        $bPostfixElastix2 = isPostfixToElastix2();
+        $bPostfixElastix2 = isPostfixToIssabel2();
         $regexp = $bPostfixElastix2
             ? '/^[a-z0-9]+([\._\-]?[a-z0-9]+[_\-]?)*@[a-z0-9]+([\._\-]?[a-z0-9]+)*(\.[a-z0-9]{2,6})+$/'
             : '/^([a-z0-9]+([\._\-]?[a-z0-9]+[_\-]?)*)$/';

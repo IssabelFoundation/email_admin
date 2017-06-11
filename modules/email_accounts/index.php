@@ -159,7 +159,7 @@ function viewFormAccount($smarty, $module_name, $local_templates_dir, &$pDB, $ar
     if(is_array($arrAccounts)){
         //username, password, id_domain, quota
         $end = count($arrAccounts);
-        //$configPostfix2 = isPostfixToElastix2();// in misc.lib.php
+        //$configPostfix2 = isPostfixToIssabel2();// in misc.lib.php
         foreach($arrAccounts as $account) {
             $arrTmp    = array();
             $username=$account[0];
@@ -347,7 +347,7 @@ function saveAccount($smarty, $module_name, $local_templates_dir, &$pDB, $arrCon
                                 $quotaIsTooGreat = true;
                                 $_POST["quota"] = 5242880;
                             }
-                            $configPostfix2 = isPostfixToElastix2();// in misc.lib.php
+                            $configPostfix2 = isPostfixToIssabel2();// in misc.lib.php
                             if($configPostfix2)
                                 $username=$_POST['address'].'@'.$domain;
                             else
@@ -648,7 +648,7 @@ function create_email_account($pDB,$domain_name,&$errMsg)
     // -- si hay error al insertarlo en la bd lo elimino del sistema
     // -- creo el mailbox para la cuenta (si hay error deshacer lo realizado)
     $username = "";
-    $configPostfix2 = isPostfixToElastix2();// in misc.lib.php
+    $configPostfix2 = isPostfixToIssabel2();// in misc.lib.php
 
     if($configPostfix2)
         $username=$_POST['address'].'@'.$domain_name;

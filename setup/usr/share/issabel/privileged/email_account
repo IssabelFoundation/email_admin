@@ -127,7 +127,7 @@ function create_domain($opt)
     }
 
     // Add the new domain to the required key in main.cf
-    $bPostfixElastix2 = isPostfixToElastix2();
+    $bPostfixElastix2 = isPostfixToIssabel2();
     add_remove_domain_postfix($sNewDomain, TRUE, $bPostfixElastix2);
     
     return TRUE;
@@ -156,7 +156,7 @@ function delete_domain($opt)
         error_exit("ERR: failed to login to IMAP\n");
     }
     
-    $bPostfixElastix2 = isPostfixToElastix2();
+    $bPostfixElastix2 = isPostfixToIssabel2();
     try {
         $conn = new PDO('sqlite:/var/www/db/email.db');
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -336,7 +336,7 @@ function create_account($opt)
         error_exit("ERR: failed to login to IMAP\n");
     }
     
-    $bPostfixElastix2 = isPostfixToElastix2();
+    $bPostfixElastix2 = isPostfixToIssabel2();
     try {
         $conn = new PDO('sqlite:/var/www/db/email.db');
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -484,7 +484,7 @@ function delete_account($opt)
         error_exit("ERR: failed to login to IMAP\n");
     }
     
-    $bPostfixElastix2 = isPostfixToElastix2();
+    $bPostfixElastix2 = isPostfixToIssabel2();
     try {
         $conn = new PDO('sqlite:/var/www/db/email.db');
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -533,7 +533,7 @@ function set_account_password($opt)
         error_exit("ERR: no password specified.\n");
     }
 
-    $bPostfixElastix2 = isPostfixToElastix2();
+    $bPostfixElastix2 = isPostfixToIssabel2();
     try {
         $conn = new PDO('sqlite:/var/www/db/email.db');
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -574,7 +574,7 @@ function reconstruct_mailbox($opt)
 			break;
 	}
 
-    $regexpUsuario = isPostfixToElastix2()
+    $regexpUsuario = isPostfixToIssabel2()
         ? '/^[a-z0-9]+([\._\-]?[a-z0-9]+[_\-]?)*@[a-z0-9]+([\._\-]?[a-z0-9]+)*(\.[a-z0-9]{2,6})+$/'
         : '/^([a-z0-9]+([\._\-]?[a-z0-9]+[_\-]?)*)$/';
 
@@ -600,7 +600,7 @@ function reconstruct_mailbox($opt)
 	return ($ret == 0);
 }
 
-function isPostfixToElastix2()
+function isPostfixToIssabel2()
 {
     foreach (file('/etc/imapd.conf') as $s) {
         if (strpos(trim($s), 'virtdomains: yes') === 0) return TRUE;
