@@ -18,7 +18,6 @@
   | the License for the specific language governing rights and           |
   | limitations under the License.                                       |
   +----------------------------------------------------------------------+
-  | The Original Code is: Elastix Open Source.                           |
   | The Initial Developer of the Original Code is PaloSanto Solutions    |
   +----------------------------------------------------------------------+
   $Id: checkSpamFolder.php,v 1.1 2011-05-01 05:09:57 Eduardo Cueva <ecueva@palosanto.com> Exp $ */
