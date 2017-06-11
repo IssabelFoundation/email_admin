@@ -280,7 +280,7 @@ SCRIPT;
 
     /*********************************************************************************
     /* Funcion retorna el mensaje de vacaciones que se ha guardado dado un email:
-    /* - $email:      email del usuario elastix en session
+    /* - $email:      email del usuario issabel en session
     /*
     /* Retorna:
     /* - $result:     El resultado de la consulta realizada
