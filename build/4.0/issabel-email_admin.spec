@@ -65,7 +65,7 @@ chmod +x $RPM_BUILD_ROOT/var/www/deleteSpam.php
 chmod +x $RPM_BUILD_ROOT/var/www/disable_vacations.php
 chmod +x $RPM_BUILD_ROOT/usr/share/issabel/privileged/*
 
-# Files provided by all Elastix modules
+# Files provided by all Issabel modules
 mkdir -p    $RPM_BUILD_ROOT/var/www/html/
 mv modules/ $RPM_BUILD_ROOT/var/www/html/
 
@@ -129,7 +129,7 @@ else
 fi
 
 # TODO: TAREA DE POST-INSTALACIÓN
-# Cambio archivos de Postfix e Imapd con los de Elastix
+# Cambio archivos de Postfix e Imapd con los de Issabel
 # Only replace main.cf on install  and user spamfilter create
 if [ $1 -eq 1 ]; then
     mv /etc/imapd.conf /etc/imapd.conf.orig
@@ -146,7 +146,7 @@ if [ $1 -eq 1 ]; then
 fi
 
 pathModule="/usr/share/issabel/module_installer/%{name}-%{version}-%{release}"
-# Run installer script to fix up ACLs and add module to Elastix menus.
+# Run installer script to fix up ACLs and add module to Issabel menus.
 issabel-menumerge /usr/share/issabel/module_installer/%{name}-%{version}-%{release}/menu.xml
 
 pathSQLiteDB="/var/www/db"
