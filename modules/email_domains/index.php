@@ -273,7 +273,7 @@ function create_email_domain($pDB,&$errMsg)
     $bReturn=FALSE;
     $pEmail = new paloEmail($pDB);
 
-    $bExito = $pEmail->createDomain($_POST['domain_name']);
+    $bExito = $pEmail->createDomain(strtolower($_POST['domain_name']));
     if (!$bExito) $errMsg = _tr($pEmail->errMsg);
     return $bExito;
 }
