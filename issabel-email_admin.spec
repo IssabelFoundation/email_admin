@@ -10,7 +10,6 @@ Source0: issabel-%{modname}-%{version}.tar.gz
 BuildRoot: %{_tmppath}/%{name}-%{version}-root
 BuildArch: noarch
 Requires(pre): issabel-framework >= 4.0.0-1
-Requires(pre): RoundCubeMail
 Requires(pre): php-imap
 Requires(pre): postfix, spamassassin, cyrus-imapd
 Requires: mailman >= 2.1.9
