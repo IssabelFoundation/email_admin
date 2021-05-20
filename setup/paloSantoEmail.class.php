@@ -5,6 +5,7 @@
   | Issabel version 0.5                                                  |
   | http://www.issabel.org                                               |
   +----------------------------------------------------------------------+
+  | Copyright (c) 2021 Issabel Foundation                                |
   | Copyright (c) 2006 Palosanto Solutions S. A.                         |
   +----------------------------------------------------------------------+
   | The contents of this file are subject to the General Public License  |
@@ -19,7 +20,8 @@
   +----------------------------------------------------------------------+
   | The Initial Developer of the Original Code is PaloSanto Solutions    |
   +----------------------------------------------------------------------+
-  $Id: paloSantoEmail.class.php,v 1.1.1.1 2007/07/06 21:31:55 gcarrillo Exp $ */
+  $Id: paloSantoEmail.class.php, Thu 20 May 2021 08:19:35 AM EDT, nicolas@issabel.com
+*/
 
 if (isset($arrConf['basePath'])) {
     include_once($arrConf['basePath'] . "/libs/paloSantoDB.class.php");
@@ -34,7 +36,7 @@ class paloEmail {
     private $_DB; // instancia de la clase paloDB
     var $errMsg;
 
-    function paloEmail(&$pDB)
+    function __construct(&$pDB)
     {
         // Se recibe como parámetro una referencia a una conexión paloDB
         if (is_object($pDB)) {

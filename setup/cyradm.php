@@ -54,7 +54,7 @@ class cyradm
         #Konstruktor
         #
         */
-        function cyradm()
+        function __construct()
         {
                 global $rtxt;
                 $_keys = array('host', 'port', 'admin', 'pass');
