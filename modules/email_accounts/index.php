@@ -216,7 +216,7 @@ function reconstruir_mailBox($smarty, $module_name, $local_templates_dir, &$pDB,
     $userAccount = isset($_SESSION['issabel_user'])?$_SESSION['issabel_user']:"";
 
     if($pEmail->resconstruirMailBox(getParameter("username"))){
-        $smarty->assign("mb_title", _tr('MESSAGE').":");
+        $smarty->assign("mb_title", _tr('Message').":");
         $smarty->assign("mb_message", _tr("The MailBox was reconstructed succefully"));
     }else{
         $smarty->assign("mb_title", _tr('ERROR').":");
@@ -492,7 +492,7 @@ function saveOneAccount($smarty, &$pDB, $isFromFile)
             }
             else{
                 if(!$isFromFile){
-                    $smarty->assign("mb_title", _tr('MESSAGE').":");
+                    $smarty->assign("mb_title", _tr('Message').":");
                     $smarty->assign("mb_message", _tr("Changes Applied successfully"));
                 }
                 $content = true;
