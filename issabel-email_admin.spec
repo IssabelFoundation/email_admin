@@ -105,9 +105,9 @@ fi
 
 %post
 # Habilito inicio automático de servicios necesarios
-chkconfig --level 345 saslauthd on
-chkconfig --level 345 cyrus-imapd on
-chkconfig --level 345 postfix on
+systemctl enable saslauthd || :
+systemctl enable cyrus-imapd || :
+systemctl enable postfix || :
 
 # Cambiar permisos del archivo /etc/sasldb2 a 644
 #chmod 644 /etc/sasldb2
