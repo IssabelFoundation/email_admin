@@ -145,7 +145,8 @@ function viewFormAccount($smarty, $module_name, $local_templates_dir, &$pDB, $ar
 
     $arrData = array();
 
-    $pACL = new paloACL(new paloDB($arrConf['issabel_dsn']['acl']));
+    $ppDB = new paloDB($arrConf['issabel_dsn']['acl']);
+    $pACL = new paloACL($ppDB);
     $userAccount = isset($_SESSION['issabel_user'])?$_SESSION['issabel_user']:"";
 
     $reconstruir = _tr("Reconstruct");
