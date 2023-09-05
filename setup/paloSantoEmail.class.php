@@ -82,7 +82,7 @@ class paloEmail {
                 $paramSQL[] = $id_domain;
             }
             $sPeticionSQL .= ' ORDER BY domain_name';
-            $arr_result =& $this->_DB->fetchTable($sPeticionSQL, FALSE, $paramSQL);
+            $arr_result = $this->_DB->fetchTable($sPeticionSQL, FALSE, $paramSQL);
             if (!is_array($arr_result)) {
                 $arr_result = FALSE;
                 $this->errMsg = $this->_DB->errMsg;
@@ -152,7 +152,7 @@ class paloEmail {
     function getNumberOfAccounts($id_domain)
     {
         $number =0;
-        $arr_result =& $this->_DB->getFirstRowQuery(
+        $arr_result = $this->_DB->getFirstRowQuery(
             'SELECT COUNT(*) FROM accountuser WHERE id_domain = ?',
             FALSE, array($id_domain));
         if (is_array($arr_result) && count($arr_result)>0) {
