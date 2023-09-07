@@ -427,6 +427,7 @@ function saveOneAccount($smarty, &$pDB, $isFromFile)
     $quota       = getParameter("quota");
     $error = "";
     $bExito = FALSE;
+    $content = false;
 
     if (empty($password1) && empty($password2)){
         $noCambioPass = TRUE;
@@ -678,8 +679,8 @@ function obtener_quota_usuario($pEmail, $username,$module_name,$id_domain)
     $tamano_usado=_tr("Could not query used disc space");
     if(is_array($quota) && count($quota)>0){
         if ($quota['used'] != "NOT-SET"){
-            $q_used  = $quota['used'];
-            $q_total = $quota['qmax'];
+            $q_used  = intval($quota['used']);
+            $q_total = intval($quota['qmax']);
             if (! $q_total == 0){
                 $q_percent = number_format((100*$q_used/$q_total),2);
                 $tamano_usado="$quota[used] KB / <a href='?menu=$module_name&action=viewFormEditQuota&username=$username&domain=$id_domain' title='$edit_quota'>$quota[qmax] KB</a> ($q_percent%)";

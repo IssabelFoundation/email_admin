@@ -182,7 +182,7 @@ class paloEmail {
                 $paramSQL[] = $username;
             }
             $sPeticionSQL .= ' ORDER BY username';
-            $arr_result =& $this->_DB->fetchTable($sPeticionSQL, FALSE, $paramSQL);
+            $arr_result = $this->_DB->fetchTable($sPeticionSQL, FALSE, $paramSQL);
             if (!is_array($arr_result) && count($arr_result)>0) {
                 $arr_result = FALSE;
                 $this->errMsg = $this->_DB->errMsg;
