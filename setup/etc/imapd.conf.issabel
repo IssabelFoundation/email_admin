@@ -2,7 +2,7 @@ configdirectory: /var/lib/imap
 partition-default: /var/spool/imap
 admins: cyrus
 autocreatequota: 10000
-createonpost: no
+autocreate_post: no
 allowplaintext: yes
 sievedir: /var/lib/imap/sieve
 sendmail: /usr/sbin/sendmail
@@ -10,12 +10,12 @@ hashimapspool: true
 sasl_pwcheck_method: auxprop
 sasl_auxprop_plugin: sasldb
 sasl_mech_list: PLAIN
-tls_cert_file: /etc/pki/cyrus-imapd/cyrus-imapd.pem
-tls_key_file: /etc/pki/cyrus-imapd/cyrus-imapd.pem
-tls_ca_file: /etc/pki/tls/certs/ca-bundle.crt
+tls_server_cert: /etc/pki/cyrus-imapd/cyrus-imapd.pem
+tls_server_key: /etc/pki/cyrus-imapd/cyrus-imapd.pem
+tls_client_ca_file: /etc/pki/tls/certs/ca-bundle.crt
 unixhierarchysep: yes
-autocreateinboxfolders: spam
-autosubscribeinboxfolders: spam
+autocreate_inbox_folders: spam
+autocreate_subscribe_folders: spam
 anysievefolder: yes
 altnamespace: 1
 defaultdomain: example.com
