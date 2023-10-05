@@ -155,7 +155,7 @@ function action_enableremotesmtp($opt)
                 system('/usr/sbin/postfix reload');
                 if (!is_file('/etc/postfix/tls/tlscer.crt')) {
                     if (!is_dir('/etc/postfix/tls')) mkdir('/etc/postfix/tls');
-                    system('/etc/pki/tls/certs/make-dummy-cert /etc/postfix/tls/tlscer.crt');
+                    system('/usr/bin/make-dummy-cert /etc/postfix/tls/tlscer.crt');
                 }
             }
             $sasldata = "$sRelay:$iPort $sUser:$sPass";            
