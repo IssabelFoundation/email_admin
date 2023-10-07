@@ -675,3 +675,7 @@ readme_directory = /usr/share/doc/postfix-2.5.6/README_FILES
 # inet_protocols = all
 
 virtual_transport = lmtp:unix:/var/lib/imap/socket/lmtp
+
+smtpd_recipient_restrictions = permit_mynetworks, permit_sasl_authenticated, defer_unauth_destination
+
+smtpd_relay_restrictions = permit_mynetworks, reject
