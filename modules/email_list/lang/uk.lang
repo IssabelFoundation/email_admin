@@ -1,0 +1,90 @@
+<?php
+/* vim: set expandtab tabstop=4 softtabstop=4 shiftwidth=4:
+   Codificación: UTF-8
+  +----------------------------------------------------------------------+
+  | Issabel Version 4.0                                                  |
+  | http://www.issabel.org                                               |
+  +----------------------------------------------------------------------+
+  | Copyright (c) 2017 Issabel Foundation                                |
+  | Copyright (c) 2006 Palosanto Solutions S. A.                         |
+  +----------------------------------------------------------------------+
+  | The contents of this file are subject to the General Public License  |
+  | (GPL) Version 2 (the "License"); you may not use this file except in |
+  | compliance with the License. You may obtain a copy of the License at |
+  | http://www.opensource.org/licenses/gpl-license.php                   |
+  |                                                                      |
+  | Software distributed under the License is distributed on "AS IS"     |
+  | basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See  |
+  | the License for the specific language governing rights and           |
+  | limitations under the License.                                       |
+  +----------------------------------------------------------------------+
+  | The Initial Developer of the Original Code is PaloSanto Solutions    |
+  |                                                                      |
+  | Translated by: LLC LeNET                                             |
+  | Email: support@lenet.com.ua                                          |
+  +----------------------------------------------------------------------+
+  $Id: uk.lang,v 1.7 2023-10-28 14:18:24 LLC LENET support@lenet.ua Exp $ */
+global $arrLangModule;
+$arrLangModule=array(
+	"Name1 Lastname1 <userEmail1@domain1.com>" => "Ім'я1 Прізвище1 &lt;userEmail1@domain1.com&gt;",
+	"Name2 Lastname2 <userEmail2@domain2.com>" => "Ім'я2 Прізвище2 &lt;userEmail2@domain2.com&gt;",
+	"Name3 Lastname3 <userEmail3@domain3.com>" => "Ім'я3 Прізвище3 &lt;userEmail3@domain3.com&gt;",
+	"Email List" => "Списки Розсилки",
+	"Are you sure you wish to delete the Email List(s)." => "Ви впевнені, що хочете видалити списки розсилки?",
+	"List name" => "Назва Списку Розсилки",
+	"Membership" => "Членство",
+	"Action" => "Дія",
+	"Add Members" => "Додайти Учасників",
+	"All" => "Все",
+	"New Email list" => "Новий Список Розсилки",
+	"Select a domain" => "Виберіть домен",
+	"Wrong List Name" => "Неправильна назва списку розсилки",
+	"The Password List and Confirm Password List do not match" => "Список паролів і список підтверджених паролів не збігаються",
+	"The domain selected does not exist" => "Вибраний домен не існує",
+	"The List entered already exists" => "Введений список розсилки уже існує",
+	"Could not create the list" => "Не вдалося створити список розсилки",
+	"Could not create the virtual alias" => "Не вдалося створити віртуальний псевдонім",
+	"The List was successfully created" => "Список Розсилки успішно створено",
+	"You can also enter a name for each email, like the following" => "Ви також можете ввести назву для кожної електронної пошти, як показано нижче",
+	"New List Member" => "Новий Список Учасників",
+	"The List entered does not exist" => "Введеного списку не існує",
+	"Already a member" => "Вже є учасником",
+	"Mailman could not add the members" => "Mailman не може додати учасників",
+	"The following members were added to the list" => "Наступні учасники були додані до списку",
+	"The following members could not be added to the list" => "Наступних учасників не вдалося додати до списку",
+	"Message" => "Повідомлення",
+	"Mailman could not remove the list" => "Mailman не може видалити список(и)",
+	"The email list(s) were successfully deleted" => "Списки розсилок були успішно видалені",
+	"Domain" => "Домен",
+	"Email mailmam admin" => "Адміністратор Mailman",
+	"Password" => "Пароль",
+	"Domain name" => "Доменне ім'я",
+	"Confirm password list" => "Підтвердьте пароль",
+	"Email admin list" => "Список адміністраторів",
+	"Members emails" => "Електронні адреси Учасників",
+	"Could not execute command list_lists" => "Не вдалося виконати команду list_lists",
+	"Remove members" => "Видалити учасників",
+	"Remove List Member" => "Видалити Учасника Списку",
+	"You must enter each email line by line, like the following" => "Ви повинні вводити кожну електронну пошту рядок за рядком, як показано нижче",
+	"userEmail1@domain1.com" => "userEmail1@domain1.com",
+	"userEmail2@domain2.com" => "userEmail2@domain2.com",
+	"userEmail3@domain3.com" => "userEmail3@domain3.com",
+	"Mailman could not remove the members" => "Mailman не зміг видалити учасників",
+	"No such subscriber" => "Такого підписника немає",
+	"The following members were removed from the list" => "Наступних членів було вилучено зі списку",
+	"The following members could not be removed from the list" => "Наступних учасників не вдалося видалити зі списку",
+	"Add" => "Додати",
+	"Remove" => "Видалити",
+	"New List Settings" => "Нові Налаштування Списку Розсилок",
+	"Mailman Admin Settings" => "Налаштування Адміністратора Mailman",
+	"There is no domain created. To use this module you need at least one domain. You can create a domain in the module Email->Domains" => "Домен не створено. Для використання цього модуля вам потрібен принаймні один домен. Створити домен можна в модулі <a href='?menu=email_domains'>Електронна пошта->Домени</a>",
+	"View members" => "Переглянути Учасників",
+	"Return" => "Повернення",
+	"List Members of" => "Список Учасників",
+	"Member name" => "Ім'я члена",
+	"Member email" => "Електронна пошта учасника",
+	"Name" => "Ім'я",
+	"Email" => "Email",
+	"Export Members" => "Експорт Учасників",
+);
+?>

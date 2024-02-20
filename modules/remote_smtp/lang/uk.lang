@@ -1,0 +1,59 @@
+<?php
+/* vim: set expandtab tabstop=4 softtabstop=4 shiftwidth=4:
+   Codificación: UTF-8
+  +----------------------------------------------------------------------+
+  | Issabel Version 4.0                                                  |
+  | http://www.issabel.org                                               |
+  +----------------------------------------------------------------------+
+  | Copyright (c) 2017 Issabel Foundation                                |
+  | Copyright (c) 2006 Palosanto Solutions S. A.                         |
+  +----------------------------------------------------------------------+
+  | The contents of this file are subject to the General Public License  |
+  | (GPL) Version 2 (the "License"); you may not use this file except in |
+  | compliance with the License. You may obtain a copy of the License at |
+  | http://www.opensource.org/licenses/gpl-license.php                   |
+  |                                                                      |
+  | Software distributed under the License is distributed on "AS IS"     |
+  | basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See  |
+  | the License for the specific language governing rights and           |
+  | limitations under the License.                                       |
+  +----------------------------------------------------------------------+
+  | The Initial Developer of the Original Code is PaloSanto Solutions    |
+  |                                                                      |
+  | Translated by: LLC LeNET                                             |
+  | Email: support@lenet.com.ua                                          |
+  +----------------------------------------------------------------------+
+  $Id: uk.lang,v 1.7 2023-10-29 23:55:29 LLC LENET support@lenet.ua Exp $ */
+global $arrLangModule;
+$arrLangModule=array(
+	"Host Name" => "Ім'я Хоста",
+	"Remote SMTP Delivery" => "Віддалена Доставка по SMTP",
+	"Remote SMTP Server" => "Віддалений SMTP Сервер",
+	"Port" => "Порт",
+	"Username" => "Ім'я користувача",
+	"Password" => "Пароль",
+	"Autentification" => "Аутентифікація",
+	"Enable" => "Увімкнути",
+	"Disable" => "Вимкнути",
+	"Enabled" => "Увімкнено",
+	"Disabled" => "Вимкнено",
+	"Save" => "Зберегти",
+	"Status" => "Стан",
+	"Result transaction" => "Підсумкова транзакція",
+	"Configured successful" => "Конфігурацію налаштовано успішно",
+	"Invalid file extension.- It must be pem" => "Неправильне розширення файлу - має бути pem",
+	"Message Remote SMTP Server" => "<p>Параметр 'Домен' визначає хост за умовчанням для надсилання пошти. У випадку SMTP вкажіть домен, хост, [host] або [address]; форма [хост] вимикає пошук MX.<br /><br /> Домен = [gateway.my.domain]<br /> Домен = uucphost<br /> Домен = [an.ip.add.ress]< /p>",
+	"Message Remote Autentification" => "Ця опція дозволяє автентифікацію за допомогою сертифікатів.",
+	"Message Remote SMTP Cert" => "Для ввімкнення опції сертифікатів необхідно вказати обов'язкові поля",
+	"OTHER" => "ІНШЕ",
+	"SMTP Server" => "Сервер SMTP",
+	"Domain" => "Домен",
+	"TLS Enable" => "Увімкнути TLS",
+	"Ex" => "Пр",
+	"Failed to connect to server" => "Не вдалося підключитися до сервера",
+	"Failed to send hello command" => "Не вдалося надіслати команду hello",
+	"Failed to start TLS" => "Не вдалося запустити TLS",
+	"Authenticate not accepted from server" => "Не прийнято автентифікацію від сервера",
+	"Authenticate Error, TLS must be activated" => "Помилка Автентифікації, потрібно активувати TLS",
+);
+?>

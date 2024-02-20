@@ -1,0 +1,81 @@
+<?php
+/* vim: set expandtab tabstop=4 softtabstop=4 shiftwidth=4:
+   Codificación: UTF-8
+  +----------------------------------------------------------------------+
+  | Issabel Version 4.0                                                  |
+  | http://www.issabel.org                                               |
+  +----------------------------------------------------------------------+
+  | Copyright (c) 2017 Issabel Foundation                                |
+  | Copyright (c) 2006 Palosanto Solutions S. A.                         |
+  +----------------------------------------------------------------------+
+  | The contents of this file are subject to the General Public License  |
+  | (GPL) Version 2 (the "License"); you may not use this file except in |
+  | compliance with the License. You may obtain a copy of the License at |
+  | http://www.opensource.org/licenses/gpl-license.php                   |
+  |                                                                      |
+  | Software distributed under the License is distributed on "AS IS"     |
+  | basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See  |
+  | the License for the specific language governing rights and           |
+  | limitations under the License.                                       |
+  +----------------------------------------------------------------------+
+  | The Initial Developer of the Original Code is PaloSanto Solutions    |
+  |                                                                      |
+  | Translated by: LLC LeNET                                             |
+  | Email: support@lenet.com.ua                                          |
+  +----------------------------------------------------------------------+
+  $Id: uk.lang,v 1.7 2023-10-28 12:22:13 LLC LENET support@lenet.ua Exp $ */
+global $arrLangModule;
+$arrLangModule=array(
+	"Accounts" => "Облікові Записи",
+	"Email Account List" => "Облікові Записи Електронної Пошти",
+	"Create Account" => "Створити Обліковий Запис",
+	"Select a domain" => "Виберіть домен",
+	"Email Address" => "Адреса Електронної Пошти",
+	"Account Name" => "Ім'я Облікового Запису",
+	"Used Space" => "Використаний Простір",
+	"Options" => "Опції",
+	"New Email Account" => "Новий Обліковий Запис",
+	"Quota (Kb)" => "Квота (Кб)",
+	"The e-mail address already exists" => "Адреса електронної пошти вже існує",
+	"View Account" => "Перегляд Акаунта",
+	"Edit Account" => "Редагувати Акаунт",
+	"Retype password" => "Повторно введіть пароль",
+	"Domain" => "Домен",
+	"Show" => "Показати",
+	"Error" => "Помилка",
+	"EDITABLE" => "МОЖНА РЕДАГУВАТИ",
+	"Error deleting user accounts from system" => "Помилка видалення акаунтів з системи",
+	"Error deleting user accounts" => "Помилка при видаленні акаунтів",
+	"Error deleting record from table domain" => "Помилка видалення запису з таблиці домену",
+	"You must select a domain to create an account" => "Щоб створити обліковий запис ви повинні вибрати домен",
+	"Could not query used disc space" => "Не вдалося запитати зайнятий дисковий простір",
+	"The passwords are empty or don't match" => "Паролі порожні або не збігаються",
+	"The passwords don't match" => "Паролі не збігаються",
+	"Changes Applied successfully" => "Зміни успішно Застосовані",
+	"Error appliying changes" => "Помилка застосування змін",
+	"Account deleted successfully" => "Обліковий запис успішно видалено",
+	"File Upload" => "Завантажити Файл",
+	"Account" => "Обліковий Запис",
+	"The format of the file must be csv (file.csv), like the following" => "Формат файлу має бути csv (file.csv), як показано нижче",
+	"Username1,Password1,Quota1(Kb)" => "Ім'я_користувача_1,Пароль_1,Квота_1(КБ)",
+	"Username2,Password2,Quota2(Kb)" => "Ім'я_користувача_2,Пароль_2,Квота_2(КБ)",
+	"The value of Quota(Kb) must be a number, like 1000 or 2000, etc" => "Значення Квоти (КБ) має бути числом, наприклад, 1000 або 2000",
+	"Error reading the file" => "Помилка читання файлу",
+	"Possible file upload attack. The file must end in .csv" => "Можливо атака завантаження файлу. Ім'я файлу має закінчуватися на .csv",
+	"Wrong format for username" => "Неправильний формат імені користувача",
+	"The following accounts were created" => "Наступні облікові записи успішно створено",
+	"The following accounts could not be created" => "Наступні облікові записи не можуть бути створені",
+	"Quota must be greater than 0" => "Квота має бути більше ніж 0",
+	"The quota was reduced to the maximum of 5242880KB, if you want to more than this, edit this account" => "Квоту зменшено до максимуму 5242880 КБ, якщо ви хочете більше, відредагуйте цей обліковий запис",
+	"Export Accounts" => "Експорт Облікових Записів",
+	"The file could not be opened" => "Неможливо відкрити файл",
+	"At least three parameters are needed" => "Принаймні потрібно три параметри",
+	"Error saving the account" => "Помилка збереження облікового запису",
+	"Edit quota" => "Редагувати квоту",
+	"The following account does not exist" => "Наступний обліковий запис не існує",
+	"Edit quota to" => "Редагувати квоту",
+	"The passwords must not be empty" => "Паролі не повинні бути порожніми",
+	"Reconstruct MailBox" => "Відновлення Поштової Скриньки",
+	"Reconstruct" => "Відновити",
+);
+?>

@@ -1,0 +1,33 @@
+<html>
+<header>
+  <link rel="stylesheet" href="/themes/{$THEMENAME}/styles.css">
+  <link rel="stylesheet" href="/themes/{$THEMENAME}/help.css">
+</header>
+<body>
+
+<h1>{$node_name}</h1>
+
+<p>Опція "Домени" в меню "Пошта" в Issabel дозволяє нам переглядати і створювати домени на поштовому сервері.</p>
+
+<div class="hlp_figures"><img src="../modules/{$node_id}/images/uk_hlp_email_domains.png" border="0" />
+<p>Зображення 1</p></div>
+<br />
+<h3>Створити Домен</h3>
+
+<p>Щоб додати домен, натисніть кнопку "Створити Домен". З'явиться форма, в яку потрібно ввести назву нового домену.</p>
+
+<div class="hlp_figures"><img src="../modules/{$node_id}/images/uk_hlp_email_domains_create.png" border="0" />
+<p>Зображення 2</p></div>
+<br />
+<h3>Видалення Домену</h3>
+
+<p>Натиснувши на назву домену, ми потрапимо на екран з кнопкою "Видалити".</p>
+
+<div class="hlp_figures"><img src="../modules/{$node_id}/images/uk_hlp_email_domains_view_del.png" border="0" />
+<p>Зображення 3</p></div>
+<br />
+
+
+
+</body>
+</html>

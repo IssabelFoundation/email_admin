@@ -1,0 +1,63 @@
+<?php
+/* vim: set expandtab tabstop=4 softtabstop=4 shiftwidth=4:
+   Codificación: UTF-8
+  +----------------------------------------------------------------------+
+  | Issabel Version 4.0                                                  |
+  | http://www.issabel.org                                               |
+  +----------------------------------------------------------------------+
+  | Copyright (c) 2017 Issabel Foundation                                |
+  | Copyright (c) 2006 Palosanto Solutions S. A.                         |
+  +----------------------------------------------------------------------+
+  | The contents of this file are subject to the General Public License  |
+  | (GPL) Version 2 (the "License"); you may not use this file except in |
+  | compliance with the License. You may obtain a copy of the License at |
+  | http://www.opensource.org/licenses/gpl-license.php                   |
+  |                                                                      |
+  | Software distributed under the License is distributed on "AS IS"     |
+  | basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See  |
+  | the License for the specific language governing rights and           |
+  | limitations under the License.                                       |
+  +----------------------------------------------------------------------+
+  | The Initial Developer of the Original Code is PaloSanto Solutions    |
+  |                                                                      |
+  | Translated by: LLC LeNET                                             |
+  | Email: support@lenet.com.ua                                          |
+  +----------------------------------------------------------------------+
+  $Id: uk.lang,v 1.7 2023-09-25 21:24:16 LLC LeNET support@lenet.com.ua Exp $ */
+global $arrLangModule;
+$arrLangModule=array(
+	"Antispam" => "Антиспам",
+	"Spam Level" => "Рівень Спаму",
+	"Enabled" => "Увімкнено",
+	"Disabled" => "Вимкнено",
+	"Commad failed, try activate spam filter" => "Команда не вдалася під час спроби активувати спам-фільтр",
+	"Failed activate spam filter" => "Не вдалося ввімкнути спам-фільтр",
+	"Commad failed, try change thoroughness level" => "Помилка команди під час спроби змінити рівень ретельності",
+	"Failed change thoroughness level and header" => "Не вдалося змінити заголовок і рівень ретельності",
+	"Failed disactivate spam filter" => "Не вдалося вимкнути спам-фільтр",
+	"Commad failed, try disactivate spam filter" => "Помилка команди під час спроби дезактивувати спам-фільтр",
+	"Status" => "Статус",
+	"Save" => "Зберегти",
+	"Error" => "Помилка",
+	"Legend" => "<i>Рівень 1 перехоплює більше спаму, але також збільшує ймовірність помилкових спрацьовувань.<br>Рівень 10 перехоплює менше спаму, але зменшує ймовірність помилкових спрацьовувань.</i>",
+	"Message" => "Повідомлення",
+	"Successfully Activated Service Antispam" => "Сервіс антиспаму успішно активовано",
+	"Successfully Desactivated Service Antispam" => "Службу захисту від спаму успішно вимкнено",
+	"Antispam service is already activated" => "Служба антиспаму вже активована",
+	"Antispam service is already desactivated" => "Сервіс антиспаму вже вимкнено",
+	"Could not give permissions to files" => "Не вдалося встановити дозволи для файлів",
+	"Could not make the configuration file" => "Не вдалося зберегти файл конфігурації",
+	"Could not start the service antispam" => "Не вдалося запустити службу антиспаму",
+	"Could not stop the service antispam" => "Не вдалося зупинити службу антиспам",
+	"Rewrite Header" => "Переписати Заголовок",
+	"The command failed when attempting to change the header" => "Не вдалося виконати команду під час спроби змінити заголовок",
+	"Level" => "Рівень",
+	"Politics" => "Політика",
+	"Spam Capture" => "Перехопити Спам",
+	"Mark Subject" => "Позначити Тему",
+	"Empty Spam Folders" => "Очистити Папки зі Спамом",
+	"Delete Spam for more than one week" => "Видалити спам-повідомлення старше одного тижня",
+	"Delete Spam for more than two week" => "Видалити спам-повідомлення старше двох тижнів",
+	"Delete Spam for more than one month" => "Видалити спам-повідомлення старше одного місяця",
+);
+?>

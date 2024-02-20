@@ -1,0 +1,70 @@
+<?php
+/* vim: set expandtab tabstop=4 softtabstop=4 shiftwidth=4:
+   Codificación: UTF-8
+  +----------------------------------------------------------------------+
+  | Issabel Version 4.0                                                  |
+  | http://www.issabel.org                                               |
+  +----------------------------------------------------------------------+
+  | Copyright (c) 2017 Issabel Foundation                                |
+  | Copyright (c) 2006 Palosanto Solutions S. A.                         |
+  +----------------------------------------------------------------------+
+  | The contents of this file are subject to the General Public License  |
+  | (GPL) Version 2 (the "License"); you may not use this file except in |
+  | compliance with the License. You may obtain a copy of the License at |
+  | http://www.opensource.org/licenses/gpl-license.php                   |
+  |                                                                      |
+  | Software distributed under the License is distributed on "AS IS"     |
+  | basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See  |
+  | the License for the specific language governing rights and           |
+  | limitations under the License.                                       |
+  +----------------------------------------------------------------------+
+  | The Initial Developer of the Original Code is PaloSanto Solutions    |
+  |                                                                      |
+  | Translated by: LLC LeNET                                             |
+  | Email: support@lenet.com.ua                                          |
+  +----------------------------------------------------------------------+
+  $Id: uk.lang,v 1.7 2023-10-30 03:15:15 LLC LENET support@lenet.ua Exp $ */
+global $arrLangModule;
+$arrLangModule=array(
+	"Vacations" => "Відпустка",
+	"Email Address" => "Email Адреса",
+	"Subject" => "Тема",
+	"Body" => "Тіло",
+	"Operation cannot be done. Please try Again." => "Операція не може бути виконана. Спробуйте ще Раз.",
+	"Operation have been succesful." => "Операція пройшла успішно.",
+	"Succesful" => "Успішно",
+	"Error" => "Помилка",
+	"Disable Message Vacations" => "Вимкнути Повідомлення про Відпустку",
+	"Enable Message Vacations" => "Увімкнути Повідомлення про Відпустку",
+	"Alert" => "Тривога",
+	"Cyrus Imap is down" => "Cyrus Imap не працює",
+	"Cyrus Imap is up" => "Cyrus Imap працює",
+	"Error: Impossible remove " => "Помилка: Неможливо видалити ",
+	"Error: Impossible upload " => "Помилка: Неможливо завантажити ",
+	"Error: Impossible activate " => "Помилка: Неможливо активувати ",
+	"Email's Vacations have been enabled" => "Vacation Message has been enabled",
+	"Email's Vacations have been disabled" => "Vacation Message has been disabled",
+	"Choose other email account" => "Виберіть інший обліковий запис електронної пошти",
+	"User isn't allowed to view this content." => "Користувач не має права переглядати цей контент.",
+	"Account" => "Обліковий Запис",
+	"Status" => "Стан",
+	"Email is not correct. Please write the email assigned to your issabel account." => "Email вказано невірно. Будь ласка, напишіть email, призначений для вашого облікового запису issabel.",
+	"Emails Account" => "Обліковий Запис Електронної Пошти",
+	"Vacations Activated" => "Відпустки Активовано",
+	"Auto-Reply: Out of the office" => "Автовідповідь: Поза офісом",
+	"I will be out of the office until {END_DATE}.\n\n----\nBest Regards." => "Мене не буде в офісі до {END_DATE}.\n\n----\nЗ повагою.",
+	"yes" => "так",
+	"no" => "ні",
+	"Please contact your administrator if your user does not have an email account otherwise add it to System->User management->Users" => "Зверніться до адміністратора, якщо ваш користувач не має облікового запису електронної пошти, або додайте його в <a href='?menu=userlist'>Система->Управління користувачами->Користувачі</a>.Зверніться до адміністратора, якщо ваш користувач не має облікового запису електронної пошти, або додайте його в <a href='?menu=userlist'>Система->Користувачі->Користувачі</a>.",
+	"Email is empty or is not correct. Please write the email account." => "Електронна пошта порожня або невірна. Будь ласка, напишіть обліковий запис електронної пошти.",
+	"Initial Date" => "Початкова Дата",
+	"End Date" => "Дата Закінчення",
+	"TO" => "ПО",
+	"FROM" => "З",
+	"Date" => "Дата",
+	"End date should be greater than the initial date" => "Кінцева дата повинна бути більшою за початкову дату",
+	"day(s)" => "день (днів)",
+	"Period" => "Період",
+	"Email" => "Повідомлення про Відпустку вимкнено",
+);
+?>
