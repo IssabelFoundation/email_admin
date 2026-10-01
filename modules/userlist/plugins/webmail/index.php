@@ -23,8 +23,23 @@
 
 class paloUserPlugin_webmail extends paloSantoUserPluginBase
 {
+    private $_available = NULL;
+
+    private function _isAvailable()
+    {
+        if (!is_null($this->_available)) return $this->_available;
+
+        $this->_available = FALSE;
+        if ($this->_pACL->getIdResource('webmail') === FALSE) return $this->_available;
+        if (!is_array($this->_pACL->getUserProfile(0, 'webmail'))) return $this->_available;
+
+        return $this->_available = TRUE;
+    }
+
     function addFormElements($privileged)
     {
+        if (!$this->_isAvailable()) return array();
+
         return array(
             "webmailpassword1"   => array(
                 "LABEL"                  => _tr("Webmail Password"),
@@ -55,11 +70,10 @@ class paloUserPlugin_webmail extends paloSantoUserPluginBase
 
     function loadFormEditValues($username, $id_user)
     {
+        if (!$this->_isAvailable()) return;
+
         $listaPropiedades = $this->_pACL->getUserProfile($id_user, 'webmail');
-        if (!is_array($listaPropiedades)) {
-            print "ERROR DE DB: ".$pACL->errMsg;
-            $listaPropiedades = array();
-        }
+        if (!is_array($listaPropiedades)) return;
         if (!isset($_POST['webmaildomain']) && isset($listaPropiedades['domain']))
             $_POST['webmaildomain'] = $listaPropiedades['domain'];
         if (!isset($_POST['webmailuser']) && isset($listaPropiedades['login']))
@@ -70,12 +84,16 @@ class paloUserPlugin_webmail extends paloSantoUserPluginBase
 
     function fetchForm($smarty, $oForm, $local_templates_dir, $pvars)
     {
+        if (!$this->_isAvailable()) return '';
+
         $smarty->assign('LBL_WEBMAIL_FIELDS', _tr("Mail Profile"));
         return $oForm->fetchForm("$local_templates_dir/new_webmail.tpl", '', $pvars);
     }
 
     function runPostCreateUser($smarty, $username, $id_user)
     {
+        if (!$this->_isAvailable()) return TRUE;
+
         $listaPropiedades = array();
         foreach (array(
             'webmailuser' => 'login', 'webmailpassword1' => 'password', 'webmaildomain' => 'domain')
